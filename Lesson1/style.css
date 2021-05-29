@@ -1,0 +1,13 @@
+body {
+    background-color: aquamarine;
+}
+
+h1 {
+    text-align: center;
+}
+
+.message {
+    text-align: center;
+    font: bold italic 200% serif;
+    color: red;
+}
