@@ -12,7 +12,8 @@ function strangeCalc() {
         operand1 = prompt('Введите первый операнд', '');
         operand2 = prompt('Введите второй операнд', '');
         if (isNaN(operand1) || isNaN(operand2) || operand1 ==
-        undefined || operand2 == undefined) {
+        undefined || operand2 == undefined || operand1 ==
+        '' || operand2 == '') {
             alert('Введите числа');
             cheсkOperand();
         } else {
