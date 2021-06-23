@@ -6,10 +6,7 @@ function checkIsEven (num) {
   }
 
 function checkIsPrime (num) {
-    if (num <= 0) {
-        return false;
-    }
-    if (num === 2) {
+    if (num <= 1) {
         return false;
     }
     for (let i = 2; i < num; i++) {
