@@ -2,6 +2,7 @@ const person = {
     _name: 'Vasya',
     _age: 30,
     _gender: 'male',
+    validGenders: ["male","female","non-binary","transgender","Intersex", "n/a"],
     get name() {
         return this._name;
     },
@@ -22,8 +23,7 @@ const person = {
         this._age = value;
         },
     set gender(value) {
-        if (!(value === "male" || value === "female" || value === "non-binary" ||
-            value === "transgender" || value === "Intersex" || value === "n/a")) {
+        if (!person.validGenders.includes(value)) {
             alert("Нет такого пола!");
             return;
         }
