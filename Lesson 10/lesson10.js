@@ -1,3 +1,12 @@
+class TodoItem {
+    constructor (id, header, descr, done) {
+        this.id = id;
+        this.header = header;
+        this.descr = descr;
+        this.done = done;
+    }
+}
+
 class TodoList {
     constructor () {
     }
@@ -9,21 +18,22 @@ class TodoList {
     }
 
     add() {
-        let todoItem = {};
-        todoItem.id = +prompt('Введите id задачи', '');
-        todoItem.header = prompt('Введите заголовок задачи', '');
-        todoItem.descr = prompt('Введите описание задачи', '');
-        let isDone = prompt('Задача выполнена? (да, нет)', '');
-            if (isDone === 'да') {
-                todoItem.done = true;
+        const id = +prompt('Введите id задачи', '');
+        const header = prompt('Введите заголовок задачи', '');
+        const descr = prompt('Введите описание задачи', '');
+        let done = prompt('Задача выполнена? (да, нет)', '');
+            if (done === 'да') {
+                done = true;
             } else {
-                todoItem.done = false;
+                done = false;
             }
-        this.items.push(todoItem);
+
+        const item = new TodoItem (id, header, descr, done)
+        this.items.push(item);
     }
 }
 
-list1 = new TodoList()
+const list1 = new TodoList;
 list1.add();
 list1.add();
 list1.add();
