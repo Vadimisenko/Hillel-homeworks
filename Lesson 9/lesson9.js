@@ -13,26 +13,30 @@ const person = {
         return this._gender;
     },
     set name(value) {
+        Object.defineProperty(this, '_name', {writable: true});
         this._name = value;
+        Object.defineProperty(this, '_name', {writable: false});
         },
     set age(value) {
         if (value <= 0 || value > 120) {
-            alert("Возраст нереальный!");
             return;
         }
+        Object.defineProperty(this, '_age', {writable: true});
         this._age = value;
+        Object.defineProperty(this, '_age', {writable: false});
         },
     set gender(value) {
         if (!person.validGenders.includes(value)) {
-            alert("Нет такого пола!");
             return;
         }
+        Object.defineProperty(this, '_gender', {writable: true});
         this._gender = value;
+        Object.defineProperty(this, '_gender', {writable: false});
         }
 };
 
 Object.defineProperties(person, {
-    _name: {enumerable: false},
-    _age: {enumerable: false},
-    _gender: {enumerable: false}
+    _name: {enumerable: false, writable: false},
+    _age: {enumerable: false, writable: false},
+    _gender: {enumerable: false, writable: false}
 });
